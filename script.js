@@ -24,13 +24,14 @@ function isAllSave() {
 
 addBtn.addEventListener("click", function () {
     let n = isAllSave()
+    
     if( n !== 0 ) {
-        alert("you must save all older notes to create a new note")
+        alert("you must save all older notes to create a new note!!!!")
         return
     }
 
-    let note = `<div class="header" style="background-color:${headerColor[colorIndex]}">
-                    <h2>Note ${++notesNumber}</h2>
+    let note = `<div class="header" style="background-color:${ headerColor[colorIndex] }">
+                    <h2>Note ${ ++notesNumber }</h2>
                     <div>
                         <button class="btn"><i class="fa-solid fa-floppy-disk save" title="save/edit"></i></button>
                         <button class="btn"><i class="fa-solid fa-trash delete" title="delete"></i></button>
@@ -57,6 +58,7 @@ addBtn.addEventListener("click", function () {
     saveBtn.addEventListener("click", function () {
         if (saveBtn.classList.contains("save")) {
             if(textarea.value != "") {
+                
                 //textarea.innerHTML = marked(textarea.value); 
                 textarea.disabled = true;
                 noteDiv.setAttribute('data-save','1')
@@ -65,8 +67,9 @@ addBtn.addEventListener("click", function () {
                 saveBtn.classList.remove("fa-floppy-disk");
                 saveBtn.classList.add("fa-edit");
                 return;
+                
             } else {
-                alert("you must type in note to save it.");
+                alert("you must type in note to save it!!!!");
             }
         }
     
@@ -89,3 +92,5 @@ addBtn.addEventListener("click", function () {
 
     notesList.appendChild(noteDiv);
 });
+
+
